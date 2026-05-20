@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+tyles.css
+
+/* Background */
+.app-container {
+  background-color: #0f172a;
+  /* dark blue background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form-container {
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  color: #e2e8f0;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Title */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #93c5fd;
+  /* light blue */
+}
+
+/* Labels */
+.form-container label {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+/* Inputs */
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+  color: rgb(195, 104, 104);
+}
+
+/* Focus effect */
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px #3b82f6;
+}
+
+/* Groups */
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.date-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Button */
+.form-container button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Hover */
+.form-container button:hover {
+  background-color: #1d4ed8;
+}

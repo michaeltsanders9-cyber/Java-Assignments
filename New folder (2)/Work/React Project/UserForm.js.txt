@@ -1,0 +1,85 @@
+import React, { useState } from "react";
+import "./Form.css";
+
+function UserForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    gender: "",
+    skills: [],
+    country: "",
+    startDate: "",
+    endDate: "",
+    comments: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    if (type === "checkbox") {
+      let updatedSkills = [...formData.skills];
+      if (checked) {
+        updatedSkills.push(value);
+      } else {
+        updatedSkills = updatedSkills.filter(skill => skill !== value);
+      }
+
+      setFormData({ ...formData, skills: updatedSkills });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
+  return (
+    <div className="app-container">
+      <form className="form-container" onSubmit={handleSubmit}>
+        <h2>Registration Form</h2>
+
+        <label>Name</label>
+        <input type="text" name="name" onChange={handleChange} />
+
+        <label>Email</label>
+        <input type="email" name="email" onChange={handleChange} />
+
+        <label>Gender</label>
+        <div className="radio-group">
+          <label><input type="radio" name="gender" value="male" onChange={handleChange}/> Male</label>
+          <label><input type="radio" name="gender" value="female" onChange={handleChange}/> Female</label>
+        </div>
+
+        <label>Skills</label>
+        <div className="checkbox-group">
+          <label><input type="checkbox" value="Java" onChange={handleChange}/> Java</label>
+          <label><input type="checkbox" value="React" onChange={handleChange}/> React</label>
+          <label><input type="checkbox" value="SQL" onChange={handleChange}/> SQL</label>
+        </div>
+
+        <label>Country</label>
+        <select name="country" onChange={handleChange}>
+          <option value="">Select</option>
+          <option>USA</option>
+          <option>India</option>
+          <option>Canada</option>
+        </select>
+
+        <label>Date Range</label>
+        <div className="date-group">
+          <input type="date" name="startDate" onChange={handleChange} />
+          <input type="date" name="endDate" onChange={handleChange} />
+        </div>
+
+        <label>Comments</label>
+        <textarea name="comments" onChange={handleChange}></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default UserForm;
